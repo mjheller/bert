@@ -6,7 +6,7 @@
 IMAGE_NAME=tf_serving_bert_agnews
 VER=1547919083_v2
 MODEL_NAME=bert
-DOCKER_USER=poseidon
+DOCKER_USER=p0seid0n
 cd ~
 docker run -d --name $IMAGE_NAME tensorflow/serving
 mkdir ~/models
