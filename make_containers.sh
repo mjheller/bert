@@ -34,6 +34,12 @@ docker push $DOCKER_USER/$CLIENT_IMAGE_NAME:$CLIENT_VER
 gcloud container clusters create bert-cluster
 gcloud config set container/cluster bert-cluster
 gcloud container clusters get-credentials bert-cluster --zone us-east1-b --project bert-227121
+
+#install kompose if not installed
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.18.0/kompose-linux-amd64 -o kompose
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+#convert docker-compose to kubernetes deployment
 kompose convert --stdout | kubectl apply -f -
 kubectl get service # get service IPs
 
