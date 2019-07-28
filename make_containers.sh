@@ -31,7 +31,7 @@ docker push $DOCKER_USER/$CLIENT_IMAGE_NAME:$CLIENT_VER
 
 
 # run locally install gcloud and kompose
-gcloud container clusters create bert-cluster
+gcloud container clusters create bert-cluster --zone us-east1-b
 gcloud config set container/cluster bert-cluster
 gcloud container clusters get-credentials bert-cluster --zone us-east1-b --project bert-227121
 
