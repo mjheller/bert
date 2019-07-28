@@ -29,13 +29,13 @@ def predict():
   # MODEL PARAMS
   max_seq_length = 128
 
-  channel = grpc.insecure_channel("bert-agnews:8500")
+  channel = grpc.insecure_channel("bert-cola-news:8500")
   stub = prediction_service_pb2_grpc.PredictionServiceStub(channel)
 
   # Parse Description
   tokenizer = tokenization.FullTokenizer(
     vocab_file="asset/vocab.txt", do_lower_case=True)
-  processor = classifiers.AgnewsProcessor()
+  processor = classifiers.ColaProcessor()
   label_list = processor.get_labels()
   content = request.get_json()
   request_id = str(random.randint(1, 9223372036854775807))
