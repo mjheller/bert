@@ -11,6 +11,7 @@ cd ~
 docker run -d --name $IMAGE_NAME tensorflow/serving
 mkdir ~/models
 gsutil cp -r  gs://bert-finetuning-cola-news/bert/export/COLA/1563578991 ~/models
+#gsutil cp -r gs://thunderbert2/bert-finetuning-cola-news/bert/export/COLA/1563578991 ~/models
 docker cp ~/models/1563578991/ $IMAGE_NAME:/models/$MODEL_NAME
 docker commit --change "ENV MODEL_NAME $MODEL_NAME" $IMAGE_NAME $USER/$IMAGE_NAME
 docker tag $USER/$IMAGE_NAME $DOCKER_USER/$IMAGE_NAME:$VER
