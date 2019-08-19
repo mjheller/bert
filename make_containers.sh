@@ -17,8 +17,8 @@ docker tag $USER/$IMAGE_NAME $DOCKER_USER/$IMAGE_NAME:$VER
 docker push $DOCKER_USER/$IMAGE_NAME:$VER
 
 # Create client to call Bert Model
-#git clone https://github.com/mjheller/bert.git
-cd ~/bert
+git clone https://github.com/mjheller/berty-mcbertface.git
+cd ~/berty-mcbertface
 
 CLIENT_IMAGE_NAME=bert_cola_news_client
 CLIENT_VER=v1
