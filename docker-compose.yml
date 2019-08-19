@@ -2,8 +2,8 @@ version: '3'
 services:
   bert-cola-news:
     image: "p0seid0n/tf_serving_bert_cola_news:1563578991_v1"
-    environment:
-      - MODEL_NAME=bert
+    env_file:
+      - variables.env
     deploy:
       resources:
         limits:
