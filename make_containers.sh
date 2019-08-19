@@ -43,9 +43,9 @@ sudo mv ./kompose /usr/local/bin/kompose
 kompose convert --stdout | kubectl apply -f -
 kubectl get service # get service IPs
 
-wget http://34.73.232.214:8501/v1/models/bert
-wget http://host:port/v1/models/${MODEL_NAME}[/versions/${MODEL_VERSION}]
+#wget http://34.73.232.214:8501/v1/models/bert
+#wget http://host:port/v1/models/${MODEL_NAME}[/versions/${MODEL_VERSION}]
 
 # to run container
 # docker run -p 8500:8500 -p 8501:8501 -it p0seidon/$IMAGE_NAME:$VER -- sh
-docker run -p 8500:8500 -p 8501:8501 -it p0seid0n/tf_serving_bert_cola_news:1563578991_v1 -- sh
+#docker run -p 8500:8500 -p 8501:8501 -it p0seid0n/tf_serving_bert_cola_news:1563578991_v1 -- sh
