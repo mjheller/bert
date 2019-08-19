@@ -49,4 +49,4 @@ kubectl get service # get service IPs
 
 # to run container
 # docker run -p 8500:8500 -p 8501:8501 -it p0seidon/$IMAGE_NAME:$VER -- sh
-#docker run -p 8500:8500 -p 8501:8501 -it p0seid0n/tf_serving_bert_cola_news:1563578991_v1 -- sh
+#docker run -p 8500:8500 -p 8501:8501 -e MODEL_NAME=bert -it p0seid0n/tf_serving_bert_cola_news:1563578991_v1 -- sh
