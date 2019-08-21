@@ -39,7 +39,7 @@ def predict():
   label_list = processor.get_labels()
   content = request.get_json()
   request_id = str(random.randint(1, 9223372036854775807))
-  inputExample = processor._create_example([request_id, content['description']], 'predict')
+  inputExample = processor._create_example([request_id, content['description']], 'test')
   tf_example = classifiers.from_record_to_tf_example(3, inputExample, label_list, max_seq_length, tokenizer)
   model_input = tf_example.SerializeToString()
 
