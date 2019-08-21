@@ -426,6 +426,15 @@ class ColaProcessor(DataProcessor):
           InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
 
+  def _create_example(self, line, set_type):
+    guid = "%s-%s" % (set_type, tokenization.convert_to_unicode(line[0]))
+    text_a = tokenization.convert_to_unicode(line[1])
+    if set_type == "test":
+      label = "0"
+    else:
+      label = tokenization.convert_to_unicode(line[-1])
+    single_example = InputExample(guid=guid, text_a=text_a, label=label)
+    return single_example
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
