@@ -18,7 +18,7 @@ services:
     labels:
       kompose.service.type: LoadBalancer
   bert-client:
-    image: "p0seid0n/bert_cola_news_client"
+    image: "p0seid0n/bert_cola_news_client:v1"
     ports:
       - "5000:5000"
     depends_on:
